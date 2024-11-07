@@ -54,7 +54,25 @@ const TransactionForm: React.FC = () => {
     };
 
     return (
-        <Container maxWidth="sm" sx={{ textAlign: 'center', mt: 5 }}>
+        <Container maxWidth="sm" sx={{ 
+            textAlign: 'center', 
+            mt: 5,
+            mb: 5,
+            p: 4,
+            backgroundColor: 'background.paper',
+            borderRadius: 4,
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
+            border: '1px solid rgba(255, 215, 0, 0.1)',
+            '& .MuiTextField-root': {
+                backgroundColor: '#FFFFFF',
+                borderRadius: 2,
+                mb: 1,
+            },
+            '& .MuiButton-root': {
+                mt: 2,
+                fontSize: '1.1rem',
+            }
+        }}>
             <Typography variant="h4" gutterBottom>
                 Provide Transaction Data
             </Typography>
