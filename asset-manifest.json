@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/transaction-form-app/static/css/main.bab7fd84.css",
-    "main.js": "/transaction-form-app/static/js/main.f092ea9c.js",
+    "main.js": "/transaction-form-app/static/js/main.f31f5158.js",
     "static/js/206.2ed79ebc.chunk.js": "/transaction-form-app/static/js/206.2ed79ebc.chunk.js",
     "index.html": "/transaction-form-app/index.html"
   },
   "entrypoints": [
     "static/css/main.bab7fd84.css",
-    "static/js/main.f092ea9c.js"
+    "static/js/main.f31f5158.js"
   ]
 }
