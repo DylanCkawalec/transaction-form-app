@@ -18,7 +18,7 @@ const theme = createTheme({
       contrastText: '#FFFFFF',
     },
     background: {
-      default: '#FFFDF7',
+      default: '#FFF4B8',
       paper: '#FFFFFF',
     },
     text: {
@@ -67,8 +67,10 @@ const theme = createTheme({
           textTransform: 'none',
           padding: '12px 24px',
           fontWeight: 500,
+          backgroundColor: '#FFD700',
           '&:hover': {
-            boxShadow: '0 4px 12px rgba(255, 215, 0, 0.2)',
+            backgroundColor: '#B89B00',
+            boxShadow: '0 4px 12px rgba(255, 215, 0, 0.3)',
           },
         },
       },
