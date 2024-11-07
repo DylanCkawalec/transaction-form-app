@@ -1,9 +1,9 @@
-interface Point {
+export interface Point {
   X: string;
   Y: string;
 }
 
-interface BsPoint {
+export interface BsPoint {
   X: {
     A0: string;
     A1: string;
@@ -14,7 +14,7 @@ interface BsPoint {
   };
 }
 
-interface ProofData {
+export interface ProofData {
   Ar: Point;
   Krs: Point;
   Bs: BsPoint;
