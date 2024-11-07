@@ -1,16 +1,8 @@
 // src/components/TransactionForm.tsx
 import React, { useState } from 'react';
-import { TextField, Button, Typography, Container, Box } from '@mui/material';
-
-interface TransactionData {
-    nonce: number;
-    gasPrice: number;
-    gasLimit: number;
-    to: string;
-    value: number;
-    data: string;
-    chainId: number;
-}
+import { TextField, Button, Typography, Container, Box, Slide } from '@mui/material';
+import { TransactionData, TransactionResponse } from '../types/transaction';
+import TransactionNotification from './TransactionNotification';
 
 const TransactionForm: React.FC = () => {
     const [formData, setFormData] = useState<TransactionData>({
@@ -22,6 +14,8 @@ const TransactionForm: React.FC = () => {
         data: '',
         chainId: 0,
     });
+    const [response, setResponse] = useState<TransactionResponse | null>(null);
+    const [showNotification, setShowNotification] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -46,8 +40,11 @@ const TransactionForm: React.FC = () => {
                 },
                 body: JSON.stringify(formData),
             });
+            
             if (response.ok) {
-                console.log('Transaction submitted successfully');
+                const data: TransactionResponse = await response.json();
+                setResponse(data);
+                setShowNotification(true);
             } else {
                 console.error('Failed to submit transaction');
             }
@@ -73,6 +70,17 @@ const TransactionForm: React.FC = () => {
                     Submit
                 </Button>
             </Box>
+            
+            {response && (
+                <Slide direction="down" in={showNotification} mountOnEnter unmountOnExit>
+                    <div>
+                        <TransactionNotification 
+                            response={response} 
+                            onClose={() => setShowNotification(false)} 
+                        />
+                    </div>
+                </Slide>
+            )}
         </Container>
     );
 };
